@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assessment | Data Handling</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="wrap"><h1>Digital Assessment</h1><p>Grade 5 Data Handling • 10 marks</p></div></header>
+<nav><div class="wrap"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="activity.html">Activity</a><a href="assessment.html">Assessment</a><a href="support.html">Learner Support</a><a href="citizenship.html">Digital Citizenship</a><a href="reflection.html">Reflection</a></div></nav>
+<main class="wrap"><section class="card">
+<form id="quiz">
+<h2>Answer all five questions.</h2>
+<label>1. What is data? (2 marks)</label><textarea name="q1" rows="3" required></textarea>
+<label>2. A survey shows: Football = 8, Netball = 5, Athletics = 7. Which is most popular? (2 marks)</label><input name="q2" required>
+<label>3. A pictogram has the key ⭐ = 2 learners. Four stars represent how many learners? (2 marks)</label><input name="q3" required type="number">
+<label>4. Why is a scale important on a graph? (2 marks)</label><textarea name="q4" rows="3" required></textarea>
+<label>5. Football = 12, Netball = 8, Athletics = 5, Swimming = 10. Which is least popular? (2 marks)</label><input name="q5" required>
+<button class="button" type="button" onclick="markQuiz()">Check Answers</button>
+</form><div id="result" class="result"></div></section>
+<section class="card"><h2>Teacher Memorandum / Answer Key</h2>
+<ol><li>Data is information collected about people, objects or events. (2)</li><li>Football. (2)</li><li>8 learners. (2)</li><li>The scale tells us what the numbers/values on the graph represent. (2)</li><li>Athletics. (2)</li></ol><p><strong>Total: 10 marks</strong></p></section>
+</main><footer><div class="wrap">Assessment and memorandum prepared for the Grade 5 topic Data Handling.</div></footer>
+<script>
+function markQuiz(){
+let f=document.getElementById('quiz'),s=0;
+let a=f.q2.value.trim().toLowerCase(), b=f.q3.value.trim(), c=f.q5.value.trim().toLowerCase();
+if(a==='football')s+=2;if(b==='8')s+=2;if(c==='athletics')s+=2;
+let q1=f.q1.value.toLowerCase(),q4=f.q4.value.toLowerCase();
+if(q1.includes('information')&&q1.includes('collect'))s+=2;
+if(q4.includes('scale')&&(q4.includes('represent')||q4.includes('value')||q4.includes('number')))s+=2;
+document.getElementById('result').innerHTML='<strong>Auto-check score: '+s+'/10</strong><br>Review the memorandum above for the full marking guide.';
+}
+</script></body></html>
